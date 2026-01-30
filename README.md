@@ -85,16 +85,24 @@ Suggested Collaboration Types:
 
 📬 Contact Information
 <div align="center">
+  
 📧	Primary Email	gh_rezaei2003@yahoo.com
+
 📧	Secondary Email	ghrezaei1399@gmail.com
+
 💼	LinkedIn	Professional Profile
+
 👨‍💻	GitHub	github.com/ghrezaei1399
+
 🆔	ORCID	0009-0007-5840-8833
+
 </div>
 📖 Other Domains
 Books of poetry and fiction will be introduced on separate pages.
 
 🌐 Persian Version: View in Persian
+
+
 
 Core Quote:
 "Building frameworks that neither fuel fear nor naivety;
