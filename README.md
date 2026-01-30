@@ -111,6 +111,4 @@ Core Quote:
 "Building frameworks that neither fuel fear nor naivety;
 Blending wisdom with technology to found a secure and flourishing tomorrow."
 
-<div align="center" style="margin-top: 40px; color: #666; font-size: 0.9em;"> 🔒 This page is regularly updated | © Dr. Gholamreza Rezaei </div>
-آدرس سایت انگلیسی: https://ghrezaei1399-code.github.io/english-site/
-آدرس سایت فارسی: https://ghrezaei1399-code.github.io/ghrezaei1399.github.io/
+<div align="center" style="margin-top: 40px; color: #666; font-size: 0.9em;"> 🔒 This page is regularly updated | © Dr. Gholamreza Rezaei </div>/
