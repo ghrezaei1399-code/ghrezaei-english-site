@@ -103,7 +103,7 @@ Suggested Collaboration Types:
 Books of poetry and fiction will be introduced on separate pages.
 
 
-🌐 Persian Version: View in Persian
+🌐 Persian Version: View in Persian. https://ghrezaei1399-code.github.io/ghrezaei1399.github.io
 
 
 
