@@ -762,9 +762,9 @@
 </head>
 <body>
     <!-- Language button -->
-    <div class="lang-switcher">
-        <a href="https://ghrezaei1399.github.io/" class="lang-btn">فارسی</a>
-    </div>
+   <div class="lang-switcher">
+    <a href="https://ghrezaei1399-code.github.io/ghrezaei1399.github.io/" class="lang-btn">فارسی</a>
+</div>
     
     <!-- Main header -->
     <header class="main-header">
