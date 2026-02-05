@@ -778,36 +778,37 @@
     </div>
     
     <!-- Main header -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="profile-section">
-                <div class="profile-img-container">
-                    <div class="profile-img">
-                        <img src="https://i.postimg.cc/02YrBwDP/%CA%BEks-khwdm2.jpg" alt="Dr. Rezaei">
-                    </div>
-                    <div class="profile-titles">
-                        <h1>Dr. Gholamreza Rezaei</h1>
-                        <div class="tagline">
-                            Organizational Transformation Architect | AI Theorist | Poet and Writer
-                        </div>
-                    </div>
+  <header class="main-header">
+    <div class="header-container">
+        <div class="profile-section">
+            <div class="profile-img-container">
+                <div class="profile-img">
+                    <img src="https://i.postimg.cc/02YrBwDP/%CA%BEks-khwdm2.jpg" alt="Dr. Rezaei">
                 </div>
-                <div class="motto-box">
-                    <span class="motto">Motto: </span>Combining human wisdom with advanced technology for a secure and prosperous tomorrow
+                <div class="profile-titles">
+                    <h1>Dr. Gholamreza Rezaei</h1>
+                    <div class="tagline">
+                        Organizational Transformation Architect | AI Theorist | Poet and Writer
+                    </div>
                 </div>
             </div>
-            
-            <nav class="vertical-nav">
-                <a href="#global-call" class="nav-item"><span class="nav-icon">🌍</span> Global Call</a>
-                <a href="#stats" class="nav-item"><span class="nav-icon">📊</span> Statistics & Achievements</a>
-                <a href="#research" class="nav-item"><span class="nav-icon">📄</span> Research Papers</a>
-                <a href="#notes" class="nav-item"><span class="nav-icon">📝</span> Daily Notes</a>
-                <a href="#books" class="nav-item"><span class="nav-icon">📚</span> Literary Works</a>
-                <a href="#investment" class="nav-item"><span class="nav-icon">🔒</span> Collaboration & Investment</a>
-                <a href="#contact" class="nav-item"><span class="nav-icon">📞</span> Contact</a>
-            </nav>
+            <div class="motto-box">
+                <span class="motto">Motto: </span>Combining human wisdom with advanced technology for a secure and prosperous tomorrow
+            </div>
         </div>
-    </header>
+        
+        <nav class="vertical-nav">
+            <a href="#global-call" class="nav-item"><span class="nav-icon">🌍</span> Global Call</a>
+            <a href="#stats" class="nav-item"><span class="nav-icon">📊</span> Statistics & Achievements</a>
+            <a href="#research" class="nav-item"><span class="nav-icon">📄</span> Research Papers</a>
+            <a href="#notes" class="nav-item"><span class="nav-icon">📝</span> Daily Notes</a>
+            <a href="#books" class="nav-item"><span class="nav-icon">📚</span> Literary Works</a>
+            <a href="#investment" class="nav-item"><span class="nav-icon">🔒</span> Collaboration & Investment</a>
+            <a href="#contact" class="nav-item"><span class="nav-icon">📞</span> Contact</a>
+        </nav>
+    </div>
+
+</header>
     
     <!-- Global call section -->
     <section id="global-call" class="global-call-section">
@@ -846,43 +847,21 @@
         </div>
     </section>
     
-    <!-- Stats counter -->
-    <section id="stats" class="stats-section">
-        <div class="stats-container">
-            <div class="stat-box">
-                <span class="stat-number">18</span>
-                <div class="stat-label">Scientific-theoretical articles with international registration (DOI)</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">2</span>
-                <div class="stat-label">Analytical political-social articles</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">33+</span>
-                <div class="stat-label">New theories in AI and organizational transformation</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">4</span>
-                <div class="stat-label">Published poetry books</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">1</span>
-                <div class="stat-label">Published story book</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">13</span>
-                <div class="stat-label">Story books pending publication license</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">1</span>
-                <div class="stat-label">Smart writing book</div>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">1</span>
-                <div class="stat-label">Book in progress (Organizational Corruption)</div>
-            </div>
+  <section id="stats" class="stats-section">
+    <div class="stats-container">
+        <div class="stat-box">
+         <span class="stat-number animated-counter" data-target="18">0</span>
+<span class="stat-number animated-counter" data-target="2">0</span>
+<span class="stat-number animated-counter" data-target="33">0</span>
+<span class="stat-number animated-counter" data-target="4">0</span>
+<span class="stat-number animated-counter" data-target="1">0</span>
+<span class="stat-number animated-counter" data-target="13">0</span>
+<span class="stat-number animated-counter" data-target="1">0</span>
+<span class="stat-number animated-counter" data-target="1">0</span>
         </div>
-    </section>
+    </div>
+</section>
+    
     
     <!-- Research articles section -->
     <section id="research" class="research-section">
@@ -1322,39 +1301,66 @@
                 if (e.target === modal) closeModal();
             });
         }
+      <script>
+// شمارنده متحرک - فارسی
+function initCounters() {
+    const counters = document.querySelectorAll('.animated-counter');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 100;
         
-        // 6. Smooth scroll
-        function initSmoothScroll() {
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start' 
-                        });
-                    }
-                });
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.innerText = Math.ceil(current);
+                if (target === 600) counter.innerText += '%';
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target + (target === 600 ? '%' : '');
+            }
+        };
+        
+        setTimeout(updateCounter, 500);
+    });
+}
+window.addEventListener('DOMContentLoaded', initCounters);
+// Advanced animated counter
+function initAdvancedCounters() {
+    const counters = document.querySelectorAll('.animated-counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 80; // Counting speed
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                const displayValue = Math.ceil(current);
+                counter.textContent = displayValue + (target === 600 ? '%' : '');
+                setTimeout(updateCounter, 30);
+            } else {
+                counter.textContent = target + (target === 600 ? '%' : '');
+            }
+        };
+        
+        // Activate when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(updateCounter, 300);
+                    observer.unobserve(counter);
+                }
             });
-        }
-        
-        // 7. Admin panel (demo)
-        document.getElementById('adminForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Admin panel is under development. In final version, this form will save and display content.');
         });
         
-        // Run all
-        window.addEventListener('DOMContentLoaded', () => {
-            initArticleSlideshow();
-            initBooksSlideshow();
-            initResearchTabs();
-            initPPTButtons();
-            initSmoothScroll();
-            setTimeout(animateStats, 400);
-        });
-    </script>
+        observer.observe(counter);
+    });
+}
+
+// Run after page load
+window.addEventListener('DOMContentLoaded', initAdvancedCounters);
+</script>
 </body>
 </html>
