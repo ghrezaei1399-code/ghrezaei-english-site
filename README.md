@@ -18,30 +18,35 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--light-bg); color: #333; }
         
-        /* Language button in header */
+        /* Language button - optimized position */
         .lang-switcher {
-            position: absolute;
+            position: fixed;
             top: 25px;
             right: 25px;
-            z-index: 1000;
+            z-index: 999999;
+            background: rgba(10, 36, 99, 0.9);
+            padding: 5px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            border: 2px solid #D4AF37;
         }
         .lang-btn {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+            background: #D4AF37;
+            color: #0A2463;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
             text-decoration: none;
             display: inline-block;
+            transition: all 0.3s;
+            font-size: 0.95rem;
         }
         .lang-btn:hover {
-            background: var(--accent-gold);
-            color: var(--navy-blue);
+            background: #0A2463;
+            color: #D4AF37;
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
         
         /* Main header */
@@ -755,16 +760,23 @@
             .nav-item { padding: 12px 16px; font-size: 0.9rem; }
             .stat-number { font-size: 2.3rem; }
             .section-title { font-size: 1.8rem; }
-            .lang-switcher { top: 15px; right: 15px; }
-            .lang-btn { padding: 6px 12px; font-size: 0.9rem; }
+            .lang-switcher { 
+                top: 15px; 
+                right: 15px; 
+                padding: 3px;
+            }
+            .lang-btn { 
+                padding: 8px 16px; 
+                font-size: 0.9rem; 
+            }
         }
     </style>
 </head>
 <body>
     <!-- Language button -->
-  <div class="lang-switcher">
-    <a href="https://ghrezaei1399-code.github.io/ghrezaei1399.github.io/" class="lang-btn">فارسی</a>
-</div>
+    <div class="lang-switcher">
+        <a href="https://ghrezaei1399.github.io/" class="lang-btn">فارسی</a>
+    </div>
     
     <!-- Main header -->
     <header class="main-header">
@@ -910,7 +922,7 @@
                     <div class="research-card-body">
                         A framework for creating loyal digital assistants under complete control of cultural reformer users.
                     </div>
-                    <button class="request-ppt-btn">📥 Request Presentation File (PPT)</button>
+                    <button class="request-ppt-btn" onclick="location.href='#contact'">📥 Request Presentation File (PPT)</button>
                     <div class="research-card-footer">Operational framework for cultural engineers</div>
                 </div>
                 
@@ -929,7 +941,7 @@
                     <div class="research-card-body">
                         Introducing a fundamental alternative architecture with three integrated principles for secure AI development.
                     </div>
-                    <button class="request-ppt-btn">📥 Request Presentation File (PPT)</button>
+                    <button class="request-ppt-btn" onclick="location.href='#contact'">📥 Request Presentation File (PPT)</button>
                     <div class="research-card-footer">New paradigm for secure development</div>
                 </div>
             </div>
@@ -953,7 +965,7 @@
                     <div class="research-card-body">
                         A roadmap for transforming digitalization into a "cultural transformation journey" serving collective flourishing.
                     </div>
-                    <button class="request-ppt-btn">📥 Request Presentation File (PPT)</button>
+                    <button class="request-ppt-btn" onclick="location.href='#contact'">📥 Request Presentation File (PPT)</button>
                     <div class="research-card-footer">Response to 70% project failure rate</div>
                 </div>
             </div>
@@ -977,7 +989,7 @@
                     <div class="research-card-body">
                         Introducing the operational framework of national plan with "Enlightenment Companions Smartization Theory".
                     </div>
-                    <button class="request-ppt-btn">📥 Request Presentation File (PPT)</button>
+                    <button class="request-ppt-btn" onclick="location.href='#contact'">📥 Request Presentation File (PPT)</button>
                     <div class="research-card-footer">Local response to cultural governance crisis</div>
                 </div>
             </div>
@@ -1001,7 +1013,7 @@
                     <div class="research-card-body">
                         Analysis of the paradox of decreasing collective impact despite unprecedented access to technology.
                     </div>
-                    <button class="request-ppt-btn">📥 Request Presentation File (PPT)</button>
+                    <button class="request-ppt-btn" onclick="location.href='#contact'">📥 Request Presentation File (PPT)</button>
                     <div class="research-card-footer">Integrated framework for analyzing activism crisis</div>
                 </div>
             </div>
@@ -1194,7 +1206,7 @@
             });
             
             function updateArticleSlideshow() {
-                slidesContainer.style.transform = `translateX(${currentArticleSlide * 100}%)`;
+                slidesContainer.style.transform = `translateX(-${currentArticleSlide * 100}%)`;
                 document.querySelectorAll('#articlesDots .slide-dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === currentArticleSlide);
                 });
@@ -1205,19 +1217,24 @@
                 articleInterval = setInterval(() => {
                     currentArticleSlide = (currentArticleSlide + 1) % articleSlides.length;
                     updateArticleSlideshow();
-                }, 2000);
+                }, 3000);
             }
             
+            updateArticleSlideshow();
             resetArticleInterval();
         }
         
         // 2. Books slideshow
         let currentBookSlide = 0;
+        let bookInterval;
         function initBooksSlideshow() {
             const track = document.getElementById('booksTrack');
             
-            // Add twice for infinite effect
-            [...booksData, ...booksData].forEach((book, index) => {
+            // پاک کردن محتوای قبلی
+            track.innerHTML = '';
+            
+            // فقط یک بار اضافه کن
+            booksData.forEach((book, index) => {
                 const slide = document.createElement('div');
                 slide.className = 'book-slide';
                 slide.innerHTML = `
@@ -1235,14 +1252,18 @@
                 track.appendChild(slide);
             });
             
-            setInterval(() => {
+            // ریست اینتروال قبلی
+            clearInterval(bookInterval);
+            
+            bookInterval = setInterval(() => {
                 currentBookSlide++;
                 const totalSlides = booksData.length;
-                const slideWidth = 100 / totalSlides;
+                const slideWidth = 100 / 4; // 4 کتاب در هر صفحه
                 
-                track.style.transform = `translateX(${currentBookSlide * slideWidth}%)`;
+                track.style.transform = `translateX(-${currentBookSlide * slideWidth}%)`;
                 
-                if (currentBookSlide >= totalSlides) {
+                // اگر به انتها رسید، برگرد به اول
+                if (currentBookSlide >= totalSlides - 3) {
                     setTimeout(() => {
                         track.style.transition = 'none';
                         currentBookSlide = 0;
@@ -1252,7 +1273,7 @@
                         }, 50);
                     }, 500);
                 }
-            }, 2200);
+            }, 2500);
         }
         
         // 3. Stats counter
@@ -1292,14 +1313,7 @@
         
         // 5. PowerPoint modal
         function initPPTButtons() {
-            const buttons = document.querySelectorAll('.request-ppt-btn');
             const modal = document.getElementById('pptModal');
-            
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    modal.classList.add('active');
-                });
-            });
             
             window.closeModal = function() {
                 modal.classList.remove('active');
@@ -1327,13 +1341,7 @@
             });
         }
         
-        // 7. Language button
-        document.querySelector('.lang-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Already linked to Persian site
-        });
-        
-        // 8. Admin panel (demo)
+        // 7. Admin panel (demo)
         document.getElementById('adminForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Admin panel is under development. In final version, this form will save and display content.');
