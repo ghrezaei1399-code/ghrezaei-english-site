@@ -2201,12 +2201,12 @@
         </div>
     </div>
     
-    <!-- Language Button -->
-    <div class="lang-switcher">
-        <a href="#" class="lang-btn" aria-label="Switch to Persian language">
-            <i class="fas fa-globe"></i> فارسی
-        </a>
-    </div>
+   <div class="lang-switcher">
+    <a href="https://ghrezaei1399-code.github.io/ghrezaei1399.github.io/" 
+       class="lang-btn" aria-label="Go to Persian version">
+        <i class="fas fa-globe"></i> فارسی Version
+    </a>
+</div>
     
     <!-- Main Header -->
     <header class="main-header" role="banner">
